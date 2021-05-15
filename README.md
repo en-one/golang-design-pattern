@@ -1,8 +1,7 @@
 ## Go 语言设计模式
 
-完全模仿  https://github.com/senghoo/golang-design-pattern
 
-### 创建型模式
+### 创建型模式（单独对对象创建进行研究）
 - 简单工厂模式
 - 工厂方法模式
 - 抽象工厂模式
@@ -10,7 +9,10 @@
 - 原型模式
 - 单例模式
 
-### 结构性模式
+### 结构性模式（如何设计对象的结构、继承以及依赖关系）
 
 
-### 行为型模式
+### 行为型模式（对象的行为模式）
+
+
+> https://github.com/senghoo/golang-design-pattern
