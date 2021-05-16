@@ -1,4 +1,4 @@
-package simplefactory
+package factorymethod
 
 import (
 	"reflect"
@@ -9,27 +9,28 @@ func TestNewIRulrConfigParser(t *testing.T) {
 	type args struct {
 		t string
 	}
+	//go中不存在继承，使用组合
 	tests := []struct {
 		name string
 		args args
-		want IRuleConfigParser
+		want IRuleConfigParserFactory
 	}{
 		{
 			name: "json",
 			args: args{t: "json"},
-			want: jsonRuleConfigParser{},
+			want: jsonRuleConfigParserFactory{},
 		},
 		{
 			name: "yaml",
 			args: args{t: "yaml"},
-			want: yamlRuleConfigParser{},
+			want: yamlRuleConfigParserFactory{},
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := NewIRulrConfigParser(tt.args.t); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("NewIRuleConfigParser() = %v, want %v", got, tt.want)
+			if got := NewIRulrConfigParserFactory(tt.args.t); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("NewIRuleConfigParserFactory() = %v, want %v", got, tt.want)
 			}
 		})
 	}
