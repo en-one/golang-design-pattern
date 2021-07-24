@@ -32,7 +32,7 @@ func (m *Machine) Off() {
 type On struct{}
 
 func NewOn() State {
-	return &On{} //On,实现了 on 以及off方法，所以继承了state
+	return &On{} //On,实现了 on 以及off方法，多态的方式所以继承了state
 }
 
 func (o *On) On(m *Machine) {
